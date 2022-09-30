@@ -58,7 +58,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
+      <!-- <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
@@ -68,7 +68,7 @@
 
       <v-btn icon>
         <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      </v-btn> -->
     </v-app-bar>
 
     <v-main>
@@ -82,7 +82,8 @@
     data: () => ({ drawer: null,
     items: [
           { title: 'Todo', icon: 'mdi-format-list-checks', to:'/' },         
-          { title: 'About', icon: 'mdi-help-box', to:'/about' },
+          { title: 'Completati', icon: 'mdi-help-box', to:'/completati' },
+          { title: 'Login', icon: 'mdi-login', to:'/login' },
         ],
      }),
   }
