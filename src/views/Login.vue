@@ -16,12 +16,15 @@
     >
       Login
     </v-btn> 
-    <Home :nomeutente="items"/>   
+    <Home :nomeutente="items"/> 
+    <Completati :nomeutente="items"/>
+
   </div>  
 </template>
 
 <script>  
   import Home from './Todo.vue'
+  import Completati from './Completati.vue'
   export default {
   name: 'Login',   
   data() {     
@@ -32,7 +35,7 @@
     }
   },
   components: {
-    Home  
+    Home, Completati  
   },  
   methods: {
     addPerson(){

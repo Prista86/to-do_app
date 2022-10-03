@@ -84,7 +84,7 @@
           </v-list-item>
           <v-divider></v-divider>
         </div>
-        <Login />
+        
         
       </div>
       
