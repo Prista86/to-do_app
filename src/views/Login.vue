@@ -1,5 +1,5 @@
 <template>
-  <div class="about pa-6">
+  <div class="about pa-6">    
     <h1>Login page</h1>  
     <v-text-field
       v-model="loginPersona"       
@@ -15,18 +15,25 @@
       color="primary"
     >
       Login
-    </v-btn>
-  </div>
+    </v-btn> 
+    <Home :nomeutente="items"/>   
+  </div>  
 </template>
 
-<script>
+<script>  
+  import Home from './Todo.vue'
   export default {
-  name: 'Home',  
+  name: 'Login',   
   data() {     
     return {
-       nUtente:'a',  
+      loginPersona:'',
+       nUtente:'',
+       items:['first', 'second', 'third']         
     }
   },
+  components: {
+    Home  
+  },  
   methods: {
     addPerson(){
       let dati ={

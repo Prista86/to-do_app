@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home">    
     <v-text-field
       v-model="newTaskTitle" 
       @click:append="addTask" 
@@ -47,22 +47,71 @@
                 <v-icon color="primary lighten-1">mdi-pencil</v-icon>
               </v-btn>
             </v-list-item-action>
+            
           </template>
         </v-list-item>
         <v-divider></v-divider>
+        
       </div>
+      
     </v-list>
+    <v-list class="pt-0" flat>
+      <div v-for="task in tasks" :key="task.id">
+        <div v-if="task.done == true">
+          <v-list-item @click="doneTask(task.id)" :class="{'blue lighten-5':task.done}">
+            <template v-slot:default>
+              <v-list-item-action>
+                <v-checkbox :input-value="task.done" color="primary"></v-checkbox>
+              </v-list-item-action>
+
+              <v-list-item-content>
+                <v-list-item-title :class="{'text-decoration-line-through': task.done}">
+                  {{task.title+" Utente: "+task.user}}
+                </v-list-item-title>
+              </v-list-item-content>
+
+
+              <v-list-item-action>
+                <v-btn @click.stop="deleteTask(task.id)" icon>
+                  <v-icon color="primary lighten-1">mdi-delete</v-icon>
+                </v-btn>
+                <v-btn @click.stop="editTask(task.id)" icon>
+                  <v-icon color="primary lighten-1">mdi-pencil</v-icon>
+                </v-btn>
+              </v-list-item-action>
+                      
+            </template>
+          </v-list-item>
+          <v-divider></v-divider>
+        </div>
+        <Login />
+        
+      </div>
+      
+    </v-list>
+    <ul>
+    <li v-for="(value, index) in nomeutente"
+      :key="index">
+      {{value}}
+    </li>
+  </ul>
   </div>
+  
+  
 </template>
 
 <script>
-// import dati from '@src/views/Login.vue'
-export default {
+
+export default {  
+  props: [
+    'nomeutente'
+  ],
   name: 'Home',
   data() {
     return {
       loginPersona:'',
-      newTaskTitle: '',
+      editTaskTitle:'',
+      newTaskTitle: '',      
       tasks: [
         // {
         //   id: 1,
@@ -81,7 +130,7 @@ export default {
         // },
       ]
     }
-  },
+  },  
   methods: {
     addPerson(){
       let task = {
