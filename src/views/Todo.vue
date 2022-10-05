@@ -89,12 +89,39 @@
       </div>
       
     </v-list>
-    <ul>
+    <v-list class="pt-0" flat>
+      <div v-for="task in tasks" :key="task.id">
+        
+          <v-list-item >
+            <template v-slot:default>
+              <v-list-item-action>
+                <!-- <v-checkbox :input-value="task.done" color="primary"></v-checkbox> -->
+              </v-list-item-action>
+
+              <v-list-item-content>
+                <v-list-item-title :class="{'text-decoration-line-through': task.done}">
+                  {{" Utente: "+task.user}}
+                </v-list-item-title>
+              </v-list-item-content>
+
+
+              
+                      
+            </template>
+          </v-list-item>
+          <v-divider></v-divider>
+        
+        
+        
+      </div>
+      
+    </v-list>
+    <!-- <ul>
     <li v-for="(value, index) in nomeutente"
       :key="index">
       {{value}}
     </li>
-  </ul>
+  </ul> -->
   </div>
   
   
@@ -103,9 +130,9 @@
 <script>
 
 export default {  
-  props: [
-    'nomeutente'
-  ],
+  // props: [
+  //   'nomeutente'
+  // ],
   name: 'Home',
   data() {
     return {

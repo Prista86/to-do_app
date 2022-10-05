@@ -84,6 +84,7 @@
           { title: 'Todo', icon: 'mdi-format-list-checks', to:'/' },         
           { title: 'Completati', icon: 'mdi-help-box', to:'/completati' },
           { title: 'Login', icon: 'mdi-login', to:'/login' },
+          { title: 'Albo', icon: 'mdi-login', to:'/albo' },
         ],
      }),
   }

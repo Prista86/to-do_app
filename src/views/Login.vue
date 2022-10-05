@@ -1,5 +1,5 @@
 <template>
-  <div class="about pa-6">    
+  <div class="home pa-6">    
     <h1>Login page</h1>  
     <v-text-field
       v-model="loginPersona"       
@@ -16,7 +16,7 @@
     >
       Login
     </v-btn> 
-    <Home :nomeutente="items"/> 
+    <Home :nomeutente="items"/>  
     <Completati :nomeutente="items"/>
 
   </div>  
@@ -26,7 +26,7 @@
   import Home from './Todo.vue'
   import Completati from './Completati.vue'
   export default {
-  name: 'Login',   
+    name: 'Login',   
   data() {     
     return {
       loginPersona:'',
@@ -35,7 +35,8 @@
     }
   },
   components: {
-    Home, Completati  
+    Home,
+    Completati  
   },  
   methods: {
     addPerson(){
